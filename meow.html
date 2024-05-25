@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilya's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: calc(60vh - 50px); /* Adjust height to account for padding */
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .contact-left h1 {
+            font-size: 3em; /* Increase font size */
+        }
+    </style>
+</head>
+<body>
+<div id="header"> 
+    <div class="container">
+        <nav>
+            <img src="images/logo-3.png" class="logo">
+            <ul>
+                <li><a href="#header">Main</a></li>
+                <li><a href="#about">About</a></li>
+    <!----      <li><a href="#">Info</a></li>  --->
+<!----      <li><a href="#">Resume</a></li>  --->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>CS Student</p>
+            <h1>Hi, I'm <span>Ilya</span><br>From the Bay Area</h1>
+        </div>
+    </div>
+</div>
+<!-----------about--------->
+<div id="about">
+    <div class="container">
+        <div id="row">
+            <div id="about-col1">
+                <img src="images/user.png" alt="User Image">
+            </div>
+            <div id="about-col2">
+                <h1 class="subtitle">About Me</h1>
+                <p>I am a freshman at Emerald High and it has always been an interest of mine to pursue some sort of Computer Science path.
+                    Even though this portfolio is only the beginning of my journey I hope that it can be a start to something great and 
+                    enjoyable for me. For me, programming has always seemed like a very hard skill to learn and perfect. By starting small
+                    and actually trying to come up with and do my own projects I have been able to start learning and it has been very aspiring 
+                    so far. For the future I don't have any specific career path that I have decided to commit to and follow yet. As I
+                    have already mentioned I only started coding this year so there have not been many projects that I was able to complete 
+                    since many seemed too far out of my range yet.
+                </p>
+                <div class="tabtitles">
+                    <p class="tablinks active-link" onclick="opentab('skills')">My Skills</p>
+                    <p class="tablinks" onclick="opentab('projects')">Project links</p>
+                    <p class="tablinks" onclick="opentab('future')">Project details</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI design</span><br>Able to design websites using both html and css </li>
+                        <li><span>Drawing</span><br>Custom making personal artwork</li>
+                        <li><span>App Development</span><br>Creating computer scripts in languages such as python and javascript</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="projects">    
+                    <ul>
+                        <li><span>2024</span><br><a href="https://github.com/DinkytheCat/Password_Manager" target="_blank">Password Manager</a></li>
+                        <li><span>2023</span><br><a href="https://github.com/DinkytheCat/Autoclicker" target="_blank">Autoclicker</a></li>
+                        <li><span>2024-current</span><br><a href="https://github.com/DinkytheCat/Portfolio" target="_blank">Personal Portfolio website</a></li>
+                        <li><span>2024-current</span><br><a href="https://github.com/DinkytheCat/Resume/raw/main/Resume.pdf" download="Ilya'sResume.pdf">Resume download</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="future">
+                    <ul>
+                        <li><span>Password Manager</span><br>This was my team's final project for CSE, and we collaborated on making a downloadable password manager that works on your local computer. It is able to encrypt and decrypt passwords, as well as delete them from the file completely. It is a secure and easy-to-use password manager that we spent almost a month working on, and I was the group leader for the whole project.</li>
+                        <li><span>Autoclicker</span><br>"I was in need of an autoclicker, but I didn't want to download a shady one off the internet. So, I decided to make my own simple one using my keyboard to both start and stop it. You can customize it by adjusting the time between each click and whether the right or left click is triggered. It wasn't a hard project to make, but I had fun doing it.</li>
+                        <li><span>Personal Portfolio website</span><br>You're already looking at this project—it's my own portfolio. It has been one of the most time-consuming projects I've undertaken because of all the animated sliders and making the CSS look nice yet I still enjoyed making it a lot.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="contact">
+    <div class='container'>
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>Dublin CA</p>
+                <p>Email: konchenko6397@mydusd.org</p>
+                </div>
+        </div>
+    
+    </div>
+
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tablinks");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname) {
+        for (let tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (let tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        document.querySelector(`[onclick="opentab('${tabname}')"]`).classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+</body>
+</html>
